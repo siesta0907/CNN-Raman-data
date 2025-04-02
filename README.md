@@ -12,11 +12,11 @@ CNN(Convolutional Neural Network)을 통해 분류하였습니다.
 ## 2. 데이터 구성 및 전처리
 
 - **데이터 출처**:  
-  - 구리 기반 시료: `Cu1`, `Cu2`, `Cu4`, `Cu5`  
-  - Microalgae가 포함된 시료: `CuNCs-Microalgae`
+  - 구리 기반 시료: Cu1,2,4,5  
+  - Microalgae가 포함된 시료: CuNCs-Microalgae
 
 - **전처리 과정**:
-  - 이상치 및 결측치 제거 (`NaN`, `inf`, `'-nan(ind)'`)
+  - 이상치 및 결측치 제거 ('NaN', 'inf', '-nan(ind)')
   - Raman Shift 기준 정렬
   - 공통 Raman Shift 범위(100–3000 cm⁻¹)에 대해 **1500 포인트 보간**
   - **정규화**: Min-Max 또는 Standard Scaling
@@ -45,7 +45,7 @@ Input → Conv1D(64) → BatchNorm → MaxPooling → Dropout(0.4) → Conv1D(12
 
 ## 4. 모델 성능 결과
 
-### 🧪 Cu 데이터 기준 (정규화 + PCA 포함)
+### Cu 데이터 기준 (정규화 + PCA 포함)
 
 - **Training Accuracy**: 0.9749  
 - **Validation Accuracy**: 0.9794  
@@ -57,7 +57,7 @@ Input → Conv1D(64) → BatchNorm → MaxPooling → Dropout(0.4) → Conv1D(12
 
 ---
 
-### ⚗️ CuS 데이터 기준 (정규화 및 PCA 생략)
+### CuS 데이터 기준 (정규화 및 PCA 생략)
 
 | Epoch | Train Accuracy | Train Loss | Val Accuracy | Val Loss |
 |-------|----------------|------------|--------------|----------|
@@ -89,12 +89,12 @@ Input → Conv1D(64) → BatchNorm → MaxPooling → Dropout(0.4) → Conv1D(12
 
 - CNN 기반 딥러닝 모델은 라만 분광 데이터를 통해 촉매 반응의 화학적 차이를 효과적으로 학습할 수 있음을 입증하였습니다.
 - 특히 Microalgae의 존재 유무에 따른 Cu 및 CuS 표면 반응의 차이를 정량적으로 분류 가능하였으며,
-  이는 향후 **광촉매 개발, 바이오-무기재료 융합 연구, AI 기반 스펙트럼 분석** 등에 활용될 수 있습니다.
+  이는 향후 광촉매 개발, 바이오-무기재료 융합 연구, AI 기반 스펙트럼 분석 등에 활용될 수 있습니다.
 - 향후에는 다양한 촉매 물질, 실험 조건, 다중 레이블 분류 모델 등으로 확장하여 더욱 정교한 해석이 가능할 것으로 기대됩니다.
 
 ---
 
-## 📂 참고
+## 참고
 
 - 데이터 파일 형식: `.txt` (Raman Shift, Intensity)
 - 분석 도구: Python, TensorFlow, scikit-learn, Matplotlib, Seaborn
